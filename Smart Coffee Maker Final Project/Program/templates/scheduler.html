@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT Coffee Maker App | The Brew Crew</title>
+        <meta name="author" content="Anthony Stem, Matthew Hodges, Simon Garen">
+        <meta name="description" content="Flask app webpage for the Brew Crew's IoT Coffee Maker.">
+        <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <header class="navigation-bar">
+            <section class="logo">
+                <h3>The Brew Crew</h3>
+            </section>
+            <nav class="navigation-links">
+		    <a class="home-button" href="{{ url_for('index') }}">Home</a>
+            </nav>
+        </header>
+
+        <!-- Landing/Menu Buttons -->
+        <div class="landing">
+            <div class="landing-text">
+                <h1 class="landing-message">Scheduler</h1>
+            </div>
+
+	    <form class="scheduler-form" method="post" action="{{ url_for('schedulerPost') }}">
+                <label for="scheduler-input">Input a Day and Time</label>
+		<input type="datetime-local" name="brew-time" id="brew-time" min="{{ minimumDate }}" value="{{ minimumDate }}"  required>
+		<label for="check-set-recurring">Make Schedule Recurring</label>
+		<input type="checkbox" name="recurring" value="1">
+		<input type="submit" id="brew-form-submit" value="Submit">
+            </form>
+	    <div class="error-notification">{{ errorNotification }}</div>
+	</div>
+    </body>
+</html>

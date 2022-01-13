@@ -1,0 +1,302 @@
+/* 
+ * CSS for IoT Coffee Machine App 
+ * Author: Anthony Stem
+ * Class: CS 121
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ######################### NAVIGATION BAR ######################### */
+
+.navigation-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #556B2F;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 2.8vh;
+    padding-right: 2.8vh;
+}
+
+.navigation-links a:not(.cancel-button) {
+    text-decoration: none;
+    color: #EFE4D4;   
+    border-radius: 3.125rem;
+    padding: 0.6rem 1.5rem;
+}
+
+.cancel-button {
+    background-color: #DF4759;
+    text-decoration: none;
+    color: #EFE4D4;   
+    border-radius: 3.125rem;
+    padding: 0.6rem 1.5rem;
+}
+
+.navigation-links a:hover {
+    background-color: #B07946;
+}
+
+.logo {
+    color: #EFE4D4;
+}
+
+.home-button {
+    border-radius: 3.125rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #151618;
+}
+
+/* ######################### LANDING ######################### */
+
+body {
+    background-color: #EFE4D4;
+}
+
+.landing {
+    background-color: #EFE4D4;
+    height: 87vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.calendar-landing {
+	background-color: #EFE4D4;
+	text-align: center;
+	margin-top: 0;
+	padding-top: 1rem;
+}
+
+/* Welcome Message */
+.landing-text {
+    color: #151618;
+    font-family: 'Roboto', sans-serif;
+    margin: 1rem;
+}
+
+/* Home Menu Buttons */
+.home-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-buttons p {
+    font-size: small;
+}
+
+.home-buttons a {
+    text-decoration: none;
+    color: #151618;
+}
+
+.home-menu-button {
+    font-size: x-large;
+    background-color:  #A9A454;
+    border-radius: 3.125rem;
+    width: 8rem;
+    height: 3.25rem;
+    text-align: center;
+    margin: auto;
+}
+
+/* ######################### FORMS ######################### */
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #EFE4D4;
+}
+
+form label {
+    font-size: x-large;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type="time"] {
+    outline: none;
+    border: none;
+    height: 2rem;
+    width: 16rem;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+input[type="datetime-local"] {
+    outline: none;
+    border: none;
+    height: 2rem;
+    width: 16rem;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+input[type="submit"] {
+    background-color: #151618;
+    color: #EFE4D4;
+    border: none;
+    outline: none;
+    border-radius: 3.125rem;
+    padding: 0.6rem 1.5rem;
+    width: 8rem;
+    margin: auto;
+    margin-top: 8rem;
+}
+
+/* ######################### SCHEDULER CALENDAR TABLE  ######################### */
+
+.scheduler-calendar-table {
+	width: 80%;
+	margin: auto;
+	margin-top: 1rem;
+	box-shadow: 0 0 20px rgba(0, 0,  0, 0.15);
+	border-collapse: collapse;
+	background-color: #FFFFFF;
+	font-family: 'Roboto', sans-serif;
+}
+
+.scheduler-calendar-table thead tr {
+	background-color: #556B29;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.scheduler-calendar-table th, .scheduler-calendar-table td {
+	padding: 12px 15px;
+}
+
+.scheduler-calendar-table tbody tr {
+	border-bottom: 2px solid #DDDDDD;
+}
+
+.scheduler-calendar-table tbody tr:nth-of-type(even) {
+	background-color: #F3F3F3;
+}
+
+.scheduler-calendar-table tr:last-of-type {
+	border-bottom: 4px solid #556B29;
+}
+
+.scheduler-calendar-table tbody tr:hover {
+	font-weight: bold;
+	color #556B29;
+}
+
+.table-div {
+	margin-bottom: 1rem;
+}
+
+#delete-button {
+	border: none;
+	background-color: #D9534F;
+	color: #FFFFFF;
+	cursor: pointer;
+	padding: 0.2rem 0.6rem;
+	border-radius: 0.2rem;
+}
+
+#delete-button:hover {
+	background-color: #B07946;
+}
+
+/* ######################### BREWING ######################### */
+
+.estimated-brew-time {
+    margin-top: 4rem;
+}
+
+
+/* ######################### SCHEDULER ######################### */
+
+.scheduler-buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.scheduler-buttons p {
+    font-size: small;
+}
+
+.scheduler-buttons a {
+    text-decoration: none;
+    color: #151618;
+}
+
+.scheduler-menu-button {
+    font-size: x-large;
+    background-color:  #A9A454;
+    border-radius: 3.125rem;
+    width: 8rem;
+    height: 3.25rem;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+
+/* ######################### ERROR NOTIFICATIONS  ######################### */
+.error-notification {
+	margin-bottom: 1rem;
+	color: red;
+}
+
+
+/* ######################### MEDIA QUERIES ######################### */
+
+/* Touchscreen and larger devices */
+@media only screen and (max-width: 800px) {
+	.scheduler-calendar-table {
+		font-size: smaller;
+		width: 98%;
+	}
+
+	#delete-button {
+		font-size: smaller;
+	}
+	
+	.landing-text {
+		font-size: smaller;
+	}
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+	.landing-text {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.scheduler-calendar-table th, .scheduler-calendar-table td {
+		padding: 4px;
+	}
+
+	.scheduler-calendar-table {
+		width: 100%;
+		font-size: x-small;
+	}
+
+	#delete-button {
+		font-size: x-small;
+	}
+}
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT Coffee Maker App | The Brew Crew</title>
+        <meta name="author" content="Anthony Stem, Matthew Hodges, Simon Garen">
+        <meta name="description" content="Flask app webpage for the Brew Crew's IoT Coffee Maker.">
+        <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>      
+    <body>
+        <!-- Navigation Bar -->
+        <header class="navigation-bar">
+            <section class="logo">
+                <h3>The Brew Crew</h3>
+            </section>
+            <nav class="navigation-links">
+		    <a class="cancel-button" onclick="return confirm('Are you sure you want to cancel your brew?')" id="stop" href="/cancel">Cancel</a>
+            </nav>
+        </header>
+
+        <!-- Landing/Menu Buttons -->
+        <div class="landing">
+            <div class="landing-text">
+                <h1 class="landing-message">Brewing <i class="fa fa-spinner fa-pulse"></i></h1>
+		<h2 class="estimated-brew-time">Estimated Time Remaining: <span id="countdown">X seconds</span></h2>
+            </div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		let time = 240;
+		let isComplete = false;	
+
+		function updateTime() {
+			time = time - 1
+			
+			console.log(time);	
+			document.getElementById("countdown").innerHTML = time + " seconds";
+
+			if(time >= 0) {
+				setTimeout(updateTime, 1000);
+
+				if(time == 60) {
+					console.log("Shutting Off");
+					turnOff();
+				}
+			} else {
+				document.getElementById("countdown").innerHTML = "Complete";
+				window.location = "/cancel"
+			}
+		}
+
+		function turnOff() {
+			$.ajax({
+				type: "POST",
+				url: "/turn_off",
+				success: function(response) {
+					console.log(response);
+				}
+			});
+		}
+
+		updateTime();
+	</script>
+
+    </body>
+</html>
+            

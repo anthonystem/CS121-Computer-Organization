@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT Coffee Maker App | The Brew Crew</title>
+        <meta name="author" content="Anthony Stem, Matthew Hodges, Simon Garen">
+        <meta name="description" content="Flask app webpage for the Brew Crew's IoT Coffee Maker.">
+        <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>      
+        <!-- Navigation Bar -->
+        <header class="navigation-bar">
+            <section class="logo">
+                <h3>The Brew Crew</h3>
+            </section>
+            <nav class="navigation-links">
+		    <a class="home-button" href="{{ url_for('index') }}">Home</a>
+            </nav>
+        </header>
+
+        <!-- Landing/Menu Buttons -->
+        <div class="landing">
+            <div class="landing-text">
+                <h1 class="landing-message">Brew Menu</h1>
+            </div>
+            
+	    <form class="brew-time-selector" method="post" action="{{ url_for('brewPost') }}">
+                <label for="brew-time-input">Start Brewing</label>
+		<input type="hidden" id="brew-time-input" name="brew-time-input" min="{{ minBrewTime }}" value="{{ minBrewTime }}">
+         
+                <input type="submit" class="brewSubmit" id="brew" value="Start">
+            </form>
+	    <div class="error-notification">{{ errorNotification }}</div>
+        </div>
+    </body>
+</html>

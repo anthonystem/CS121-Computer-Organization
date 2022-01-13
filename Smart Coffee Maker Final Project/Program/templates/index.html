@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT Coffee Maker App | The Brew Crew</title>
+        <meta name="author" content="Anthony Stem, Matthew Hodges, Simon Garen">
+        <meta name="description" content="Flask app webpage for the Brew Crew's IoT Coffee Maker.">
+        <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <header class="navigation-bar">
+            <section class="logo">
+                <h3>The Brew Crew</h3>
+            </section>
+            <nav class="navigation-links">
+		    <a class="home-button" href="{{ url_for('index') }}">Home</a>
+            </nav>
+        </header>
+
+        <!-- Landing/Menu Buttons -->
+        <div class="landing">
+            <div class="landing-text">
+                <h1 class="landing-message">Welcome to the Brew Crew's</h1>
+                <h1 class="landing-message">IoT Coffee Maker App!</h1>
+            </div>
+
+            <nav class="home-buttons">
+		    <a class="home-menu-button" id="brew-direct" href="{{ url_for('brewmenu') }}">
+                    <i class="fa fa-coffee" aria-hidden="true"></i><p>Brew</p>
+                </a>
+		<a class="home-menu-button" id="scheduler-menu-direct" href="{{ url_for('schedulermenu') }}">
+
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <p>Scheduler</p>
+                </a>
+            </nav>
+        </div>
+    </body>
+</html>

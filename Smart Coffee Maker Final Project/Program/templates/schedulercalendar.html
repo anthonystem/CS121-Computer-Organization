@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT Coffee Maker App | The Brew Crew</title>
+        <meta name="author" content="Anthony Stem, Matthew Hodges, Simon Garen">
+        <meta name="description" content="Flask app webpage for the Brew Crew's IoT Coffee Maker.">
+        <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <header class="navigation-bar">
+            <section class="logo">
+                <h3>The Brew Crew</h3>
+            </section>
+            <nav class="navigation-links">
+		    <a class="home-button" href="{{ url_for('index') }}">Home</a>
+            </nav>
+        </header>
+
+        <!-- Landing/Menu Buttons -->
+        <div class="calendar-landing">
+            <div class="landing-text">
+                <h1 class="landing-message">Scheduler Calendar</h1>
+	    </div>
+	<div>
+	<div>
+	    <form method="post" action="/delete">
+		<div class="table-div">
+	    	    <table class="scheduler-calendar-table">
+			<thead>
+				<tr class="scheduler-table-header">
+					<th>ID</th>
+					<th>Timestamp</th>
+					<th>Brew Time</th>
+					<th>Recurring Day and Time</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in data %}
+				<tr>
+					<td>{{ item[0] }}</td>
+					<td>{{ item[1] }}</td>
+					<td>{{ item[2] }}</td>
+					<td>{{ item[3] }}</td>
+					<td><button type="Submit" name="delete-button" id="delete-button" onclick="return confirm('Are you sure?')" value="{{ item[0] }}">Delete</button></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		    </table>
+		</div>
+	   </form>
+       </div>
+   </body>
+</html>
